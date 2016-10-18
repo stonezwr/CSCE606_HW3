@@ -1821,3 +1821,471 @@ Processing by MoviesController#index as HTML
   [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG')  ORDER BY release_date
   Rendered movies/index.html.haml within layouts/application (7.2ms)
 Completed 200 OK in 45ms (Views: 41.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 165.91.214.214 at 2016-10-18 21:13:18 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.haml within layouts/application (11.8ms)
+Completed 200 OK in 362ms (Views: 328.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/movies?sort_para=release_date" for 165.91.214.214 at 2016-10-18 21:13:21 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"sort_para"=>"release_date"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY release_date[0m
+  Rendered movies/index.html.haml within layouts/application (9.8ms)
+Completed 200 OK in 30ms (Views: 27.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies?sort_para=title" for 165.91.214.214 at 2016-10-18 21:13:22 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"sort_para"=>"title"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY title[0m
+  Rendered movies/index.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 51ms (Views: 49.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&commit=Refresh" for 165.91.214.214 at 2016-10-18 21:13:24 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1"}, "commit"=>"Refresh"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+Redirected to https://csce606-project-stonezwr.c9users.io/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=title
+Completed 302 Found in 18ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/7" for 165.91.214.214 at 2016-10-18 21:13:24 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered movies/show.html.haml within layouts/application (11.7ms)
+Completed 200 OK in 70ms (Views: 51.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_by=title" for 165.91.214.214 at 2016-10-18 21:13:24 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1"}, "sort_by"=>"title"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+Redirected to https://csce606-project-stonezwr.c9users.io/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=title
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/movies" for 165.91.214.214 at 2016-10-18 21:13:24 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+Redirected to https://csce606-project-stonezwr.c9users.io/movies?sort_para=title
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/9" for 165.91.214.214 at 2016-10-18 21:13:24 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered movies/show.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_by=release_date" for 165.91.214.214 at 2016-10-18 21:13:24 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1"}, "sort_by"=>"release_date"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+Redirected to https://csce606-project-stonezwr.c9users.io/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=title
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/new" for 165.91.214.214 at 2016-10-18 21:13:24 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (36.2ms)
+Completed 200 OK in 55ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=title" for 165.91.214.214 at 2016-10-18 21:13:24 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1"}, "sort_para"=>"title"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG')  ORDER BY title[0m
+  Rendered movies/index.html.haml within layouts/application (4.7ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/movies/new" for 165.91.214.214 at 2016-10-18 21:13:27 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 165.91.214.214 at 2016-10-18 21:13:35 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"29WjKjENYzw541/SBZh5KVbnaDFenvqx0zgGapT2wqHUhL0Spjq0VtRkx80UN4uYZT1MuUbJHtbiR7im00YDwg==", "movie"=>{"title"=>"lol", "rating"=>"G", "release_date(1i)"=>"2016", "release_date(2i)"=>"10", "release_date(3i)"=>"18"}, "commit"=>"Save Changes"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "lol"], ["rating", "G"], ["release_date", "2016-10-18 00:00:00.000000"], ["created_at", "2016-10-18 21:13:35.574596"], ["updated_at", "2016-10-18 21:13:35.574596"]]
+  [1m[35m (9.9ms)[0m  commit transaction
+Redirected to https://csce606-project-stonezwr.c9users.io/movies
+Completed 302 Found in 113ms (ActiveRecord: 10.4ms)
+
+
+Started GET "/movies" for 165.91.214.214 at 2016-10-18 21:13:35 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+Redirected to https://csce606-project-stonezwr.c9users.io/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=title
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=title" for 165.91.214.214 at 2016-10-18 21:13:35 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1"}, "sort_para"=>"title"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG')  ORDER BY title[0m
+  Rendered movies/index.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=release_date" for 165.91.214.214 at 2016-10-18 21:13:39 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1"}, "sort_para"=>"release_date"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG')  ORDER BY release_date[0m
+  Rendered movies/index.html.haml within layouts/application (4.1ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&commit=Refresh" for 165.91.214.214 at 2016-10-18 21:13:43 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+NameError (undefined local variable or method `ratings' for #<MoviesController:0x007fabf4122418>
+Did you mean?  @ratings):
+  app/controllers/movies_controller.rb:28:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (108.8ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&commit=Refresh" for 165.91.214.214 at 2016-10-18 21:16:29 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.0ms)
+
+NameError (undefined local variable or method `ratings' for #<MoviesController:0x007fac05460498>
+Did you mean?  @ratings):
+  app/controllers/movies_controller.rb:28:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.0ms)
+
+
+Started GET "/" for 165.91.214.214 at 2016-10-18 21:16:53 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+Redirected to https://csce606-project-stonezwr.c9users.io/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=release_date
+Completed 302 Found in 33ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=release_date" for 165.91.214.214 at 2016-10-18 21:16:54 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1"}, "sort_para"=>"release_date"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG')  ORDER BY release_date
+  Rendered movies/index.html.haml within layouts/application (9.2ms)
+Completed 200 OK in 307ms (Views: 296.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&commit=Refresh" for 165.91.214.214 at 2016-10-18 21:16:58 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+NameError (undefined local variable or method `ratings' for #<MoviesController:0x007f6ba1ba4140>
+Did you mean?  @ratings):
+  app/controllers/movies_controller.rb:28:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.7ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&commit=Refresh" for 165.91.214.214 at 2016-10-18 21:17:10 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.9ms)
+
+NameError (undefined local variable or method `ratings' for #<MoviesController:0x007f6ba248b628>
+Did you mean?  @ratings):
+  app/controllers/movies_controller.rb:28:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.5ms)
+
+
+Started GET "/" for 165.91.214.214 at 2016-10-18 21:17:25 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+Redirected to https://csce606-project-stonezwr.c9users.io/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=release_date
+Completed 302 Found in 32ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=release_date" for 165.91.214.214 at 2016-10-18 21:17:25 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1"}, "sort_para"=>"release_date"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG')  ORDER BY release_date
+  Rendered movies/index.html.haml within layouts/application (21.5ms)
+Completed 200 OK in 302ms (Views: 289.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&commit=Refresh" for 165.91.214.214 at 2016-10-18 21:17:29 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+NameError (undefined local variable or method `ratings' for #<MoviesController:0x007fc629b9ac70>
+Did you mean?  @ratings):
+  app/controllers/movies_controller.rb:28:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (97.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&commit=Refresh" for 165.91.214.214 at 2016-10-18 21:20:54 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.0ms)
+
+NameError (undefined local variable or method `ratings' for #<MoviesController:0x007fc62a4caf98>
+Did you mean?  @ratings):
+  app/controllers/movies_controller.rb:28:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (104.4ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&commit=Refresh" for 165.91.214.214 at 2016-10-18 21:21:42 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 1.2ms)
+
+NameError (undefined local variable or method `ratings' for #<MoviesController:0x007fc62aab8180>
+Did you mean?  Rational):
+  app/controllers/movies_controller.rb:28:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (108.5ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&commit=Refresh" for 165.91.214.214 at 2016-10-18 21:22:59 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+  [1m[35mMovie Load (4.1ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 5.4ms)
+
+NoMethodError (undefined method `keys' for ["G", "PG", "PG-13", "R"]:Array):
+  app/controllers/movies_controller.rb:27:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (161.3ms)
+
+
+Started GET "/" for 165.91.214.214 at 2016-10-18 21:23:16 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+Redirected to https://csce606-project-stonezwr.c9users.io/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=release_date
+Completed 302 Found in 62ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=release_date" for 165.91.214.214 at 2016-10-18 21:23:17 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1"}, "sort_para"=>"release_date"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.6ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG')  ORDER BY release_date
+  Rendered movies/index.html.haml within layouts/application (37.1ms)
+Completed 200 OK in 560ms (Views: 541.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&commit=Refresh" for 165.91.214.214 at 2016-10-18 21:23:21 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mCACHE (2.1ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.5ms)
+
+NoMethodError (undefined method `keys' for ["G", "PG", "PG-13", "R"]:Array):
+  app/controllers/movies_controller.rb:27:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (159.4ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&commit=Refresh" for 165.91.214.214 at 2016-10-18 21:23:46 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 1.5ms)
+
+NameError (undefined local variable or method `ratings' for #<MoviesController:0x007f0182380c18>
+Did you mean?  @ratings):
+  app/controllers/movies_controller.rb:28:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.6ms)
+
+
+Started GET "/" for 165.91.214.214 at 2016-10-18 21:28:46 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+Redirected to https://csce606-project-stonezwr.c9users.io/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=release_date
+Completed 302 Found in 39ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=release_date" for 165.91.214.214 at 2016-10-18 21:28:46 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1"}, "sort_para"=>"release_date"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.6ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG')  ORDER BY release_date
+  Rendered movies/index.html.haml within layouts/application (20.5ms)
+Completed 200 OK in 416ms (Views: 403.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&commit=Refresh" for 165.91.214.214 at 2016-10-18 21:28:50 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+NameError (undefined local variable or method `ratings' for #<MoviesController:0x007fe751b971d0>
+Did you mean?  @ratings):
+  app/controllers/movies_controller.rb:28:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.6ms)
+
+
+Started GET "/" for 165.91.214.214 at 2016-10-18 21:31:13 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+Redirected to https://csce606-project-stonezwr.c9users.io/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=release_date
+Completed 302 Found in 43ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&sort_para=release_date" for 165.91.214.214 at 2016-10-18 21:31:14 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1"}, "sort_para"=>"release_date"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG')  ORDER BY release_date
+  Rendered movies/index.html.haml within layouts/application (16.9ms)
+Completed 200 OK in 403ms (Views: 388.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&commit=Refresh" for 165.91.214.214 at 2016-10-18 21:31:19 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+Redirected to https://csce606-project-stonezwr.c9users.io/movies?sort_para=release_date
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?sort_para=release_date" for 165.91.214.214 at 2016-10-18 21:31:19 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"sort_para"=>"release_date"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY release_date[0m
+  Rendered movies/index.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies?sort_para=title" for 165.91.214.214 at 2016-10-18 21:31:22 +0000
+Cannot render console from 165.91.214.214! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"sort_para"=>"title"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY title[0m
+  Rendered movies/index.html.haml within layouts/application (11.1ms)
+Completed 200 OK in 80ms (Views: 77.9ms | ActiveRecord: 0.7ms)
